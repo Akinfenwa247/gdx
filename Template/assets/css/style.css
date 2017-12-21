@@ -30,7 +30,7 @@ h1 {
 
   min-height:50px;
   //background: #201D1D url('https://images.unsplash.com/photo-1476790422463-0f61b4722b8e?auto=format&fit=crop&w=751&q=80') center center no-repeat;
-background: #222 url('../../assets/img/bg/poly_x.jpg') no-repeat;
+background: #222 url('../../assets/img/bg/poly_x.jpg') center right no-repeat;
 //  background: url('assets/img/bg/engineer-background.png');
   background-size: cover;
   color: #FFF;
