@@ -54,6 +54,10 @@ background: #222 url('../../assets/img/bg/poly_x.jpg') center right no-repeat;
   text-align: center;
 }
 
+h6 {
+  font-weight: bold;
+}
+
 .code {
   background-color: #eee;
   color: #201D1D;
