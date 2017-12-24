@@ -38,6 +38,31 @@ background: #222 url('../../assets/img/bg/poly_x.jpg') center right no-repeat;
   padding: 0.5rem;
 
 }
+.innerSpace {
+  padding:3px;
+}
+
+.xcard {
+  min-height: 420px;
+}
+
+.bg-deep {
+  background-color: #008;
+  color: white;
+  padding: 5px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.code {
+  background-color: #eee;
+  color: #201D1D;
+  padding: 5px;
+  min-width: 100px;
+  margin: 5px 0;
+  border-color: #CCC;
+}
+
 /*
  .hd {
    position: relative;
@@ -189,6 +214,13 @@ background: #222 url('../../assets/img/bg/poly_x.jpg') center right no-repeat;
   text-align: center;
 }
 
+.mainCenterStay {
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .iDarr {
   font-size: 5rem;
 }
@@ -267,6 +299,16 @@ li {
 
 .ca {
   text-align: center;
+}
+
+.cr {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cc {
+  display: flex;
+  justify-content: center;
 }
 
 .btn, .form-control {
