@@ -1,95 +1,97 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('content')
+<div class="header-div giveSpace">
+  <!-- <img src="assets/img/bg/engineer-background.png" /> -->
+  <h1>Are you a world-class dev?</h1>
+  <p>
+    Get Job at top tech companies!
+  </p>
+  <a  href="{{ route('assess')}}" role="button" class="btn btn-lg btn-success">Get Assessed</a>
+</div>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+</div>
+<section class="feature " id="feature-one">
+<div class="container">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
 
-            .full-height {
-                height: 100vh;
-            }
+  <div class="row">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
 
-            .position-ref {
-                position: relative;
-            }
+    <div class="col-md-4">
+      <img src="assets/img/user.png" class="img img-responsive" height="100"  />
+      <h3>
+        Step 1
+      </h3>
+      <p>
+        Setup your profile with your skillsets.
+      </p>
+    </div>
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+    <div class="col-md-4">
+      <img src="assets/img/test-passed.png" class="img img-responsive"  />
+      <h3>
+        Step 2
+      </h3>
+      <p>
+        Get coding test to demonstrate your expertise
+      </p>
+    </div>
 
-            .content {
-                text-align: center;
-            }
+    <div class="col-md-4">
+      <img src="assets/img/new-job.png" class="img img-responsive"  />
+      <h3>
+        Step 3
+      </h3>
+      <p>
+        Get job that matches your skillsets
+      </p>
+    </div>
 
-            .title {
-                font-size: 84px;
-            }
+  </div>
+</div>
+</section>
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+<section id="feature-two">
+<div class="container">
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
+  <div class="ca">
+      <div>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+      <h2> Top Tech Companies</h2>
+      <p>
+        Our growing list of tech companies who want to hire great talents like you are witing to have you join their teams across Africa. We pre-qualify you so you don't have to go through long interview process.
+      </p>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+    </div>
+  </div>
+
+
+</div>
+</section>
+
+<section id="feature-three">
+<div class="container">
+
+  <div class="mainNoBorder">
+
+      <div>
+        <h3 class="ca"> TOP QUESTIONS </h3>
+        <div><span><i class="fa fa-question-circle" aria-hidden="true"></i></span>
+        <span class="standAloneSpan">What if I'm a new developer, will I be tested like a pro as well? </span></div>
+        <div>
+           <p>
+             This is long
+           </p>
+         </div>
+
+
+        Who will see my profile? Companies wont see your profile until you applied to them.
+
+      </div>
+  </div>
+
+
+</div>
+</section>
+@endsection

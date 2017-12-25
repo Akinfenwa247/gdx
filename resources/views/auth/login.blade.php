@@ -1,69 +1,70 @@
-@extends('layouts.app')
+@extends('devs.layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
 
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
+<section>
+  <div class="container">
+  <div class="feature">
+  <div class="mainLogin">
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+    <div >
+      <p class="d-flex justify-content-end">
+        <a href="/company/login" role="button" class="btn btn-outline-primary" > Company Login</a>
+      </p>
+    <h2>Login to your account</h2>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <p class="altp">
+      Quick Login
+    </p>
+    <p>
+      <span class="icon icon-fb"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></span>
+      <span class="icon icon-fb"><i class="fa fa-github fa-2x" aria-hidden="true"></i></span>
+    </p>
+    <p class="altp">
+      or Login below
+    </p>
+    <form method="post" action="/login" />
+    {{ csrf_field() }}
+      <div class="form-group">
+        <div>
+          <label>Email</label>
         </div>
-    </div>
+        <div>
+          <input type="text" class="input form-control" name="email"  />
+          <div class="invalid-feedback">
+          Please enter your email.
+          </div>
+        </div>
+
+      </div>
+      <div class="form-group">
+        <div>
+          <label>Password</label>
+        </div>
+        <div>
+          <input type="password" class="input form-control" name="password"  />
+          <div class="invalid-feedback">
+          Please enter your password.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-group d-flex justify-content-end">
+        <div>
+          <button class="btn btn-primary" type="submit">Login</button>
+        </div>
+
+
+      </div>
+  </form>
+  <p>
+     Forgot your password? Retrieve <a href="{{ url('/password/reset') }}"> Here</a>
+  </p>
+</div> <!-- end forms -->
+
+  </div>
 </div>
+</div>
+</section>
 @endsection
