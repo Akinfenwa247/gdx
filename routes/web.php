@@ -28,9 +28,10 @@ Route::get('/assessment', 'PageController@assessment')->name('assessment');
 Route::get('/profile', 'PageController@profile')->name('profile');
 Route::get('/rating', 'PageController@rating')->name('rating');
 Route::get('/academy', 'PageController@academy')->name('academy');
-Route::get('/skill_level', 'PageController@skillLevel')->name('skilllevel');
+Route::get('/skill_level', 'Devs\SkillLevelController@loadSkillLevel')->name('skilllevel');
+Route::get('/editskill_level', 'Devs\SkillLevelController@editSkillLevel')->name('editskilllevel');
 Route::get('/project', 'PageController@project')->name('project');
-Route::get('/ddashboard', 'PageController@ddashboard')->name('ddashboard');
+Route::get('/ddashboard', 'PageController@ddashboard')->name('ddashboard')->middleware('auth');
 Route::get('/referral', 'PageController@ddashboard')->name('referrals');
 
 Route::get('/onboard', 'PageController@onboard')->name('onboard');

@@ -48,12 +48,20 @@
 
           <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
           <li class="nav-item"><a class="nav-link" href="/academy">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="/skill_level">Skill</a></li>
+          <li class="nav-item"><a class="nav-link" href="/edtskill_level">Skill</a></li>
         </ul>
          @endif
       </div>
     </nav>
-
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
         @yield('content')
         <footer id="footer">
         <p>

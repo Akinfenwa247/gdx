@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Laravel\Socialite\Facades\Socialite;
-use App\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SocialAuthController extends Controller
@@ -22,7 +22,7 @@ class SocialAuthController extends Controller
      {
          return Socialite::driver($provider)->redirect();
      }
- 
+
      /**
       * Obtain the user information from GitHub.
       *
@@ -81,7 +81,7 @@ class SocialAuthController extends Controller
 
 
          }
- 
+
           $userSC->token;
      }
 

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 //use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use MailController;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -56,7 +57,12 @@ class RegisterController extends Controller
       }
 
       public function showRegistrationForm(){
-        return view('auth.register');
+
+        if(Auth::check()){
+          return redirect('/');
+        }else {
+          return view('auth.register');
+        }
       }
 
 

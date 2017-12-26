@@ -29,26 +29,20 @@
         <div class="row">
           <div class="col-md-6 border border-left-0 border-top-0 border-bottom-0">
             <h4>Recent Application</h4>
+            @if($data)
+            @foreach($data as $jb)
+
             <p>
-            <strong>  <a class="" href="#">Intermediate Frontend Developer</a></strong> <br />
-              Lagos, 1234 <a class="btn btn-warning" href="#">Pending</a>
+            <strong>  <a class="" href="#">{{ $jb->job->skill }}</a></strong> <br />
+              {{ $jb->job->location}}, 1234 <a class="btn btn-warning" href="#">Pending</a>
             </p>
             <hr>
-            <p class="card-text">
-            <strong>  <a class="" href="#">Intermediate Frontend Developer</a></strong> <br />
-              Lagos, 1234 <a class="btn btn-warning" href="#">Pending</a>
+            @endforeach
+            @else
+            <p class="error">
+              You have not applied for any job.
             </p>
-            <hr>
-            <p class="card-text">
-            <strong>  <a class="" href="#">Intermediate Frontend Developer</a></strong> <br />
-              Lagos, 1234 <a class="btn btn-success" href="#">Invited</a>
-            </p>
-            <hr>
-            <p class="card-text">
-            <strong>  <a class="" href="#">Intermediate Frontend Developer</a></strong> <br />
-              Lagos, 1234 <a class="btn btn-warning" href="#">Pending</a>
-            </p>
-            <hr>
+            @endif
           </div>
 
           <div class="col-md-5 col-offset-1">

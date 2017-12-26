@@ -19,19 +19,29 @@
         <select name="skill_level" class="input custom-select" required >
           <option value="0"></option>
           <option value="1"
-
+          @if($profile->skill_level==1)
+          selected="selected"
+          @endif
           >Intern</option>
           <option value="2"
-
+          @if($profile->skill_level==2)
+          selected="selected"
+          @endif
           >Junior</option>
           <option value="3"
-
+          @if($profile->skill_level==3)
+          selected="selected"
+          @endif
           >Intermediate </option>
           <option value="4"
-
+          @if($profile->skill_level==4)
+          selected="selected"
+          @endif
           >Advance</option>
           <option value="5"
-
+          @if($profile->skill_level==5)
+          selected="selected"
+          @endif
           >Senior </option>
         </select>
         <div class="invalid-feedback">
@@ -45,7 +55,7 @@
           <label>Phone</label>
         </div>
         <div>
-          <input type="text" class="input form-control" value="{{ old ('phone') }}" name="phone" required  />
+          <input type="text" class="input form-control" value="{{ $profile->phone }}" name="phone" required  />
           <div class="invalid-feedback">
           Please enter your full name.
           </div>
@@ -62,8 +72,16 @@
           <option value="0">
 
           </option>
-          <option value="male">Male</option>
-          <option value="female">Female </option>
+          <option value="male"
+          @if($profile->sex==='male')
+          selected="selected"
+          @endif
+          >Male</option>
+          <option value="female"
+          @if($profile->sex==='female')
+          selected="selected"
+          @endif
+          >Female </option>
         </select>
         <div class="invalid-feedback">
         Please select your stack.
@@ -77,7 +95,7 @@
             <label>Portfolio (Separate by comma)</label>
           </div>
           <div>
-            <input type="text" class="input form-control" name="portfolio" value="{{ old('portfolio') }}" required  />
+            <input type="text" class="input form-control" name="portfolio" value="{{ $profile->portfolio }}" required  />
             <div class="invalid-feedback">
             Please enter your email.
             </div>
@@ -90,7 +108,7 @@
             <label>Programming Languages (Separate by comma)</label>
           </div>
           <div>
-            <input type="text" class="input form-control" name="langauge" value="{{ old('language') }}"  />
+            <input type="text" class="input form-control" name="langauge" value="{{ $profile->language }}"  />
             <div class="invalid-feedback">
             Please enter your password.
             </div>
@@ -103,7 +121,7 @@
             <label>Framework (Separate by comma)</label>
           </div>
           <div>
-            <input type="text" class="input form-control" name="framework" value="{{ old('framework')}}"  />
+            <input type="text" class="input form-control" name="framework" value="{{$profile->framework}}"  />
             <div class="invalid-feedback">
             Please enter your password.
             </div>
@@ -116,13 +134,15 @@
             <label>Location</label>
           </div>
           <div>
-            <input type="text" class="input form-control" name="location" value="{{ old('city')}}"  />
+            <input type="text" class="input form-control" name="location" value="{{$profile->city}}"  />
             <div class="invalid-feedback">
             Please enter your password.
             </div>
           </div>
 
         </div>
+
+
         <div class="form-group d-flex justify-content-end">
           <div>
             <button class="btn btn-primary" type="submit">Next</button>

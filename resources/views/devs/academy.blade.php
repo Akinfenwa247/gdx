@@ -48,15 +48,36 @@
 
       <div class="form-group">
         <div>
-          <label>Wehn will you like to resume</label>
+          <label>How available are you?</label>
         </div>
         <select name="stack" class="input custom-select" >
           <option value="0">
 
           </option>
-          <option value="1">
-            Frontend
+          <option value="fulltime">Fulltime</option>
+          <option value="parttime">Parttime</option>
+          <option value="remote">Remote </option>
+          <option value="any">Any of the Above </option>
+        </select>
+        <div class="invalid-feedback">
+        Please select your stack.
+        </div>
+
+      </div>
+
+
+      <div class="form-group">
+        <div>
+          <label>When will you like to resume</label>
+        </div>
+        <select name="stack" class="input custom-select" >
+          <option value="0">
+
           </option>
+          <option value="now">Right away</option>
+          <option value="thismonth">This month </option>
+          <option value="nextmonth">Next Month</option>
+          <option value="2months">Next 2 Months </option>
         </select>
         <div class="invalid-feedback">
         Please select your stack.

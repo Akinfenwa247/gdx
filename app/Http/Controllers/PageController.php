@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\JobController;
-use App\Company;
-use App\Job;
+use App\Http\Controllers\Job\JobController;
+use App\Models\Company;
+use App\Models\Job;
+use App\Models\Apply;
+use Auth;
 
 class PageController extends Controller
 {
@@ -58,7 +60,10 @@ class PageController extends Controller
     }
 
     public function ddashboard(){
-      return view('devs.dashboard');
+      $user_id = Auth::ID();
+      $data = JobController::listMyApplication($user_id);
+      //dd($app);
+      return view('devs.dashboard', compact('data'));
     }
 
     public function companySignup(){
