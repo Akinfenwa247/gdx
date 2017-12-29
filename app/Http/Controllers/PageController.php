@@ -56,8 +56,9 @@ class PageController extends Controller
       $user_id = Auth::ID();
       $data = JobController::listMyApplication($user_id);
       $jobs = JobController::listRecentJobs();
+      $recent = JobController::listRecentViewedJobs();
       //dd($app);
-      return view('devs.dashboard', compact('data','jobs'));
+      return view('devs.dashboard', compact('data','jobs','recent'));
     }
 
     public function companySignup(){

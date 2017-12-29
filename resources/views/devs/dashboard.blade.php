@@ -64,11 +64,11 @@
 
           <div class="col-md-3 col-offset-1">
             <h5>Recently Viewed Jobs</h5>
-            @if($jobs)
-            @foreach($jobs as $job)
+            @if($recent)
+            @foreach($recent as $rc)
             <p>
-            <strong>  <a class="" href="{{ url('/'.$job->skill.'/'.$job->id) }}">{{ \App\Http\Controllers\Devs\SkillLevelController::formatSkillLevel($job->skill_level)  }} {{ \App\Http\Controllers\Devs\SkillLevelController::formatSkill($job->skill) }}</a></strong> <br />
-              {{ $job->location }}
+            <strong>  <a class="" href="{{ url('/'.$job->skill.'/'.$job->id) }}">{{ \App\Http\Controllers\Devs\SkillLevelController::formatSkillLevel($rc->job->skill_level)  }} {{ \App\Http\Controllers\Devs\SkillLevelController::formatSkill($rc->job->skill) }}</a></strong> <br />
+              {{ $rc->job->location }}
             </p>
             <hr>
             @endforeach

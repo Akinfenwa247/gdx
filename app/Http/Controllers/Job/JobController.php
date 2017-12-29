@@ -48,17 +48,77 @@ class JobController extends Controller
       return view('jobs.jobs', compact('jobs'));
   }
 
-  public function trackJobViewed($job_id)
+  public function sessExist()
+  {
+    if(session('viewjob'))
+    {
+      return true;
+    }else{
+      return false;
+    }
+
+  }
+  /*
+  * Track the jobs viewed by a user
+  */
+
+  public function trackJobViewed( $job_id)
   {
     $job = New ViewJob;
-    
-    job->job_id = $job_id;
+    // Via a request instance...
+     if(!$this->sessExist())
+     {
+      $sess_id = session(['viewjob' => rand().rand()]);
+      }
+      //dd(session('viewjob'));
+      $job->user_id = Auth::ID();
+      $job->job_id = $job_id;
+      $job->sess_id = session('viewjob');
+      $job->save();
+
+
+      if(Auth::check() && $this->jobView($job_id))
+      {
+        $sess_id = session('viewjob');
+        $data = array(
+          'user_id' => Auth::ID()
+        );
+
+        ViewJob::where('sess_id', $sess_id)
+        ->update($data);
+      }
+
+
+
   }
+  /*
+  * Verify a job is already viewed
+  */
+
+  public function jobView($id)
+  {
+    $sess_id = session('viewjob');
+    $jview = ViewJob::where([
+
+      ['sess_id','=',$sess_id],
+    ['job_id', '=', $id]
+    ])->get();
+
+    if($jview){
+      return true;
+    }else{
+      return false;
+    }
+
+  }
+
+
 
   public function viewJob ($job, $id)
   {
       //$id = $request->id;
       $job = Job::find($id);
+      $this->trackJobViewed($id);
 
       return view('jobs.job', compact('job'));
   }
@@ -94,6 +154,15 @@ class JobController extends Controller
   public static function ListRecentJobs()
   {
     $jobs = Job::where('status', 1)->orderBy('id', 'DESC')->paginate(4);
+
+    return $jobs;
+
+  }
+
+  public static function listRecentViewedJobs()
+  {
+    $user_id = Auth::ID();
+    $jobs = ViewJob::where('user_id', $user_id)->distinct()->orderBy('id', 'DESC')->paginate(4);
 
     return $jobs;
 
