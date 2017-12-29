@@ -108,7 +108,7 @@
             <label>Programming Languages (Separate by comma)</label>
           </div>
           <div>
-            <input type="text" class="input form-control" name="langauge" value="{{ $profile->language }}"  />
+            <input type="text" class="input form-control" name="language" value="{{ $profile->language }}"  />
             <div class="invalid-feedback">
             Please enter your password.
             </div>
@@ -134,7 +134,20 @@
             <label>Location</label>
           </div>
           <div>
-            <input type="text" class="input form-control" name="location" value="{{$profile->city}}"  />
+            <input type="text" class="input form-control" name="city" value="{{$profile->city}}"  />
+            <div class="invalid-feedback">
+            Please enter your password.
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label>Country</label>
+          </div>
+          <div>
+            <input type="text" class="input form-control" name="country" value="{{$profile->country}}"  />
             <div class="invalid-feedback">
             Please enter your password.
             </div>

@@ -45,6 +45,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/rating">Rating</a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="/jobs">Jobs</a>
           </li>

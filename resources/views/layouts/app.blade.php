@@ -30,6 +30,8 @@
             <li class="nav-item active">
               <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
             </li>
+            @if(!auth()->check())
+
             <li class="nav-item">
               <a class="nav-link" href="/company">FOR COMPANIES</a>
             </li>
@@ -39,6 +41,11 @@
             <li class="nav-item">
               <a class="nav-link" href="/login">LOGIN</a>
             </li>
+            @else
+            <li class="nav-item">
+              <a class="nav-link" href="/ddashboard">Dashboard</a>
+            </li>
+            @endif
           </ul>
         </div>
       </nav>

@@ -38,13 +38,6 @@ class PageController extends Controller
         return view('devs.rating');
     }
 
-    public function skillLevel(){
-        return view('devs.skill_level');
-    }
-
-    public function academy(){
-        return view('devs.academy');
-    }
 
 
     public function onboard(){
@@ -62,8 +55,9 @@ class PageController extends Controller
     public function ddashboard(){
       $user_id = Auth::ID();
       $data = JobController::listMyApplication($user_id);
+      $jobs = JobController::listRecentJobs();
       //dd($app);
-      return view('devs.dashboard', compact('data'));
+      return view('devs.dashboard', compact('data','jobs'));
     }
 
     public function companySignup(){

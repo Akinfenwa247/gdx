@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/register', function () {
@@ -21,21 +21,28 @@ Route::get('/register', function () {
 Route::post('/register', 'Auth\RegisterController@create')->name('register');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/assess', 'PageController@assess')->name('assess');
 //Devs
 Route::get('/assessment', 'PageController@assessment')->name('assessment');
 Route::get('/profile', 'PageController@profile')->name('profile');
 Route::get('/rating', 'PageController@rating')->name('rating');
-Route::get('/academy', 'PageController@academy')->name('academy');
-Route::get('/skill_level', 'Devs\SkillLevelController@loadSkillLevel')->name('skilllevel');
-Route::get('/editskill_level', 'Devs\SkillLevelController@editSkillLevel')->name('editskilllevel');
+Route::get('/academy', 'Devs\AcademyController@loadAcademy')->name('academy')->middleware('auth');
+Route::post('/academy', 'Devs\AcademyController@saveAcademy')->name('academy')->middleware('auth');
+Route::get('/skill_level', 'Devs\SkillLevelController@loadSkillLevel')->name('skilllevel')->middleware('auth');
+Route::post('/skill_level', 'Devs\SkillLevelController@saveSkillLevel')->name('skilllevel')->middleware('auth');
+Route::get('/editskill_level', 'Devs\SkillLevelController@editSkillLevel')->name('editskilllevel')->middleware('auth');
 Route::get('/project', 'PageController@project')->name('project');
 Route::get('/ddashboard', 'PageController@ddashboard')->name('ddashboard')->middleware('auth');
 Route::get('/referral', 'PageController@ddashboard')->name('referrals');
 
 Route::get('/onboard', 'PageController@onboard')->name('onboard');
 Route::post('/onboard', 'PageController@onboard')->name('onboard');
+
+//jobs
+Route::get('/{job}/{id}', 'Job\JobController@viewJob')->name('job');
+Route::get('/jobs', 'Job\JobController@getJobs')->name('jobs');
+Route::get('/apply/{id}/{cid}', 'Job\JobController@apply')->name('apply')->middleware('auth');
 
 //Company
 Route::get('/company/login', 'PageController@companyLogin')->name('clogin');

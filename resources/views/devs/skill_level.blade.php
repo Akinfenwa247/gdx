@@ -90,7 +90,7 @@
             <label>Programming Languages (Separate by comma)</label>
           </div>
           <div>
-            <input type="text" class="input form-control" name="langauge" value="{{ old('language') }}"  />
+            <input type="text" class="input form-control" name="language" value="{{ old('language') }}"  />
             <div class="invalid-feedback">
             Please enter your password.
             </div>
@@ -116,7 +116,20 @@
             <label>Location</label>
           </div>
           <div>
-            <input type="text" class="input form-control" name="location" value="{{ old('city')}}"  />
+            <input type="text" class="input form-control" name="city" value="{{ old('city')}}"  />
+            <div class="invalid-feedback">
+            Please enter your password.
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label>Country</label>
+          </div>
+          <div>
+            <input type="text" class="input form-control" name="country" value="{{ old('country')}}"  />
             <div class="invalid-feedback">
             Please enter your password.
             </div>

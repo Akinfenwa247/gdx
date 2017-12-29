@@ -12,28 +12,28 @@
   <div class="" style="background-color:#FFF">
     <div class="row mainNoBorder">
       <div class="col-md-2">
-        <h4>Links</h4>
+        <h5>Links</h5>
         <ul>
           <li><a class="" href="/profile">Profile</a></li>
           <hr>
           <li><a class="" href="/academy">Education</a></li>
           <hr>
-          <li><a class="" href="/skill_level">Skill</a></li>
+          <li><a class="" href="/editskill_level">Skill</a></li>
           <hr>
 
         </ul>
 
       </div>
 
-      <div class="col-md-9">
+      <div class="col-md-10">
         <div class="row">
-          <div class="col-md-6 border border-left-0 border-top-0 border-bottom-0">
-            <h4>Recent Application</h4>
+          <div class="col-md-4 border border-left-0 border-top-0 border-bottom-0">
+            <h5>Recent Application</h5>
             @if($data)
             @foreach($data as $jb)
 
             <p>
-            <strong>  <a class="" href="#">{{ $jb->job->skill }}</a></strong> <br />
+            <strong>  <a class="" href="#">{{ \App\Http\Controllers\Devs\SkillLevelController::formatSkill($jb->job->skill) }}</a></strong> <br />
               {{ $jb->job->location}}, 1234 <a class="btn btn-warning" href="#">Pending</a>
             </p>
             <hr>
@@ -45,28 +45,38 @@
             @endif
           </div>
 
-          <div class="col-md-5 col-offset-1">
-            <h4>Recent Jobs</h4>
+          <div class="col-md-3 col-offset-1 border border-left-0 border-top-0 border-bottom-0">
+            <h5>Recent Posted Jobs</h5>
+            @if($jobs)
+            @foreach($jobs as $job)
             <p>
-            <strong>  <a class="" href="#">Intermediate Frontend Developer</a></strong> <br />
-              Lagos, 1234
+            <strong>  <a class="" href="{{ url('/'.$job->skill.'/'.$job->id) }}">{{ \App\Http\Controllers\Devs\SkillLevelController::formatSkillLevel($job->skill_level)  }} {{ \App\Http\Controllers\Devs\SkillLevelController::formatSkill($job->skill) }}</a></strong> <br />
+              {{ $job->location }}
             </p>
             <hr>
-            <p class="card-text">
-            <strong>  <a class="" href="#">Intermediate Frontend Developer</a></strong> <br />
-              Lagos, 1234
+            @endforeach
+            @else
+              <p>
+                No recent job matching you skill set.
+              </p>
+            @endif
+          </div>
+
+          <div class="col-md-3 col-offset-1">
+            <h5>Recently Viewed Jobs</h5>
+            @if($jobs)
+            @foreach($jobs as $job)
+            <p>
+            <strong>  <a class="" href="{{ url('/'.$job->skill.'/'.$job->id) }}">{{ \App\Http\Controllers\Devs\SkillLevelController::formatSkillLevel($job->skill_level)  }} {{ \App\Http\Controllers\Devs\SkillLevelController::formatSkill($job->skill) }}</a></strong> <br />
+              {{ $job->location }}
             </p>
             <hr>
-            <p class="card-text">
-            <strong>  <a class="" href="#">Intermediate Frontend Developer</a></strong> <br />
-              Lagos, 1234
-            </p>
-            <hr>
-            <p class="card-text">
-            <strong>  <a class="" href="#">Intermediate Frontend Developer</a></strong> <br />
-              Lagos, 1234
-            </p>
-            <hr>
+            @endforeach
+            @else
+              <p>
+                No recent job matching you skill set.
+              </p>
+            @endif
           </div>
 
         </div>

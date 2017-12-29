@@ -12,11 +12,16 @@ class Job extends Model
     //
     public function company()
     {
-        return $this->belongsTo('Company');
+        return $this->belongsTo('App\Models\Company');
     }
 
     public function apply()
     {
-        return $this->hasMany('Apply','job_id');
+        return $this->hasMany('App\Models\Apply','job_id');
+    }
+
+    public function viewjob()
+    {
+      return $this->hasMany('App\Models\ViewJob','job_id');
     }
 }
