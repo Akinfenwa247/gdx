@@ -11,10 +11,13 @@
 </div>
 
 </div>
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
 <section class="feature " id="feature-one">
 <div class="container">
-
-
   <div class="row">
 
 
@@ -84,9 +87,21 @@
            </p>
          </div>
 
+         <div><span><i class="fa fa-question-circle" aria-hidden="true"></i></span>
+         <span class="standAloneSpan">How much does it cost? </span></div>
+         <div>
+            <p>
+              This is long
+            </p>
+          </div>
 
-        Who will see my profile? Companies wont see your profile until you applied to them.
-
+          <div><span><i class="fa fa-question-circle" aria-hidden="true"></i></span>
+          <span class="standAloneSpan">What if I'm a new developer, will I be tested like a pro as well? </span></div>
+          <div>
+             <p>
+               This is long
+             </p>
+           </div>
       </div>
   </div>
 

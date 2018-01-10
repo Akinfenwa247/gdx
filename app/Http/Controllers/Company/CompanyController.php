@@ -39,8 +39,9 @@ class CompanyController extends Controller
           'password' => bcrypt($password),
       ]);
 
-      \Auth::login($user);
-      $user_id = Auth::id();
+      //\Auth::login($user);
+      //$user_id = Auth::id();
+      $user_id = $user->id;
 
       $company = new Company;
       $company->user_id = $user_id;
@@ -61,7 +62,8 @@ class CompanyController extends Controller
       $company->save();
 
 
-      return redirect('/success')->with('status', 'Thanks for asking to learn more, our sales professionals will get in touch.');
+      //return redirect('/success')->with('status', 'Thanks for asking to learn more, our sales professionals will get in touch.');
+      return redirect('/')->with('status', 'Thanks for asking to learn more, our hiring professionals will get in touch.');
   }
 
   public function success() {
