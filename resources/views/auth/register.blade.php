@@ -148,8 +148,8 @@
     </button>
   </div>
   <div class="modal-body">
-    <form method="post" action="" />
-
+    <form method="post" action="{{ route('addCompany') }}" />
+      {{ csrf_field() }}
       <div class="form-group">
         <div>
           <label>Full Name</label>
@@ -181,7 +181,7 @@
           <label>Phone Number</label>
         </div>
         <div>
-          <input type="text" class="input form-control" name="email"  />
+          <input type="text" class="input form-control" name="phone"  />
           <div class="invalid-feedback">
           Please enter your email.
           </div>
@@ -204,12 +204,27 @@
         <div>
           <label>How many developers do you want to hire in the next 3 months?</label>
         </div>
-        <select name="stack" class="input custom-select" >
+        <select name="hire" class="input custom-select" >
           <option value="0">
 
           </option>
           <option value="1">
             1
+          </option>
+          <option value="2">
+            2
+          </option>
+          <option value="3">
+            3
+          </option>
+          <option value="4">
+            4
+          </option>
+          <option value="5">
+            5
+          </option>
+          <option value="10">
+            10
           </option>
         </select>
         <div class="invalid-feedback">

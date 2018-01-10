@@ -5,7 +5,7 @@
   <!-- <img src="assets/img/bg/engineer-background.png" /> -->
   <h1>Are you a world-class dev?</h1>
   <p>
-    Get Job at top tech companies!
+    Get a job at top tech companies!
   </p>
   <a  href="{{ route('assess')}}" role="button" class="btn btn-lg btn-success">Get Assessed</a>
 </div>
@@ -55,13 +55,14 @@
 <section id="feature-two">
 <div class="container">
 
-  <div class="ca">
+  <div class="mainNoBorder2">
       <div>
 
-      <h2> Top Tech Companies</h2>
-      <p>
-        Our growing list of tech companies who want to hire great talents like you are witing to have you join their teams across Africa. We pre-qualify you so you don't have to go through long interview process.
-      </p>
+        <h2> Top Tech Companies</h2>
+        <p>
+          Our growing list of tech companies who want to hire great talents like you are waiting to have you join their teams across Africa. We pre-qualify you so you don't have to go through long interview process.
+        </p>
+    </div>
 </div>
 
 

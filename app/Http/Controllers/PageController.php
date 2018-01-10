@@ -38,6 +38,10 @@ class PageController extends Controller
         return view('devs.rating');
     }
 
+    public function referral()
+    {
+      return view('devs.referral');
+    }
 
 
     public function onboard(){

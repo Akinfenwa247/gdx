@@ -25,15 +25,17 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-
+         @if(auth::check())
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search Applicants">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
+          @endif
           <ul class="navbar-nav ">
             <li class="nav-item ">
               <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
             </li>
+             @if(auth::check())
             <li class="nav-item">
               <a class="nav-link" href="/add_position"><span class="icon icon-fb"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i></span></a>
             </li>
@@ -52,8 +54,45 @@
             <li class="nav-item">
               <a class="nav-link" href="/cprofile"><span class="icon icon-cogs"><i class="fa fa-cogs fa-2x" aria-hidden="true"></i></span></a>
             </li>
+            @endif
           </ul>
-        <ul class="navbar-nav ml-auto">
+
+          <!-- Right Side Of Navbar -->
+          <ul class="nav navbar-nav navbar-right ml-auto">
+              <!-- Authentication Links -->
+              @if (Auth::guest())
+              <li class="nav-item">
+                <a href="#" class="nav-link">HELP</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link"></a>
+              </li>
+              <li class="nav-item">
+                <a href="#"  role="button" class="btn btn-primary" data-toggle="modal" data-target="#companyModal">Start Hiring</a>
+              </li>
+              @else
+                  <li class="dropdown" class="nav-item"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                          {{ Auth::user()->name.' '.Auth::user()->lastname }}  <span class="caret"></span>
+                      </a>
+
+                      <ul class="dropdown-menu" role="menu">
+                          <li  ><a  href="{{ route('logout') }}"
+                                  onclick="event.preventDefault();
+                                           document.getElementById('logout-form').submit();">
+                                  Logout
+                              </a>
+
+                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                  {{ csrf_field() }}
+                              </form>
+                          </li>
+                      </ul>
+                  </li>
+              @endif
+          </ul>
+           
+
+        <!-- <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a href="#" class="nav-link">HELP</a>
           </li>
@@ -63,7 +102,7 @@
           <li class="nav-item">
             <a href="#"  role="button" class="btn btn-primary" data-toggle="modal" data-target="#companyModal">Start Hiring</a>
           </li>
-        </ul>
+        </ul> -->
 
       </div>
     </nav>

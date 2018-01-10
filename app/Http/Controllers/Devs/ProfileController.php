@@ -35,9 +35,20 @@ class ProfileController extends Controller
       $data = User::where('uname',$username)->firstOrFail();
       if(!is_object($data)){
           $this->abort(404);
-
       }
-      return view('pages/profile', compact('data'));
+      return view('devs.profile', compact('data'));
+  }
+
+  public function profile()
+  {
+    $user_id = Auth::ID();
+    //$username = $request->username;
+    $data = User::find($user_id)->firstOrFail();
+    if(!is_object($data)){
+        $this->abort(404);
+    }
+    return view('devs.profile', compact('data'));
+
   }
 
   public function managePicture()

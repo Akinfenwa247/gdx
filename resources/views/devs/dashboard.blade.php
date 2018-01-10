@@ -33,7 +33,7 @@
             @foreach($data as $jb)
 
             <p>
-            <strong>  <a class="" href="#">{{ \App\Http\Controllers\Devs\SkillLevelController::formatSkill($jb->job->skill) }}</a></strong> <br />
+            <strong>  <a class="" href="{{ url('/'.$jb->job->skill.'/'.$jb->job->id) }}">{{ \App\Http\Controllers\Devs\SkillLevelController::formatSkill($jb->job->skill) }}</a></strong> <br />
               {{ $jb->job->location}}, 1234 <a class="btn btn-warning" href="#">Pending</a>
             </p>
             <hr>

@@ -79,7 +79,7 @@
 				<p> <strong>Salary:</strong> &#8358;{{ number_format((float)$job->salary)}}</p>
 				<p><a href="{{ route('apply',['id'=>$job->id, 'cid'=>$job->company->id ]) }}" class="btn btn-danger">Apply</a></p>
 			</div>
-
+			<a class="" href="{{ url('/'.\App\Http\Controllers\Devs\SkillLevelController::formatSkillLevel($job->skill_level).'-'.str_replace(' ','-',\App\Http\Controllers\Devs\SkillLevelController::formatSkill($job->skill)).'/'.$job->id.'/'.auth()->ID()) }}">Share Job</a>
 		</div>
 	</div>
 </div>

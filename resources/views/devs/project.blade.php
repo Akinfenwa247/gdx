@@ -2,11 +2,11 @@
 
 @section('content')
 <section>
-  <div class="mainNoBorder ">
+  <!-- <div class="mainNoBorder ">
     <p>
       Assessment Project  Rating
     </p>
-  </div>
+  </div> -->
 </section>
     <section>
         <div class="container">

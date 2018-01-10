@@ -188,6 +188,12 @@ h6 {
   justify-content: center;
 }
 
+.mainNoBorder2 {
+  padding: 2rem;  
+  display: flex;
+  justify-content: center;
+}
+
 .mainFullWidth {
   padding: 2rem;
   background-color: #FFF;

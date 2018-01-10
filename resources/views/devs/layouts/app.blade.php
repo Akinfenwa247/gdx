@@ -37,13 +37,13 @@
             <a class="nav-link" href="/referral">Referrals</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/assessment">Assessment</a>
+            <a class="nav-link" href="#/assessment">Assessment</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/project">Project</a>
+            <a class="nav-link" href="#/project">Project</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/rating">Rating</a>
+            <a class="nav-link" href="#/rating">Rating</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/jobs">Jobs</a>
