@@ -55,7 +55,7 @@ class SocialAuthController extends Controller
          if($findUser){
              //Auth::login($findUser);
              auth()->login($findUser);
-             return redirect("/pages/profile");
+             return redirect("/ddashboard");
 
          }else{
             $fullname = explode(" ",$SCName);
@@ -77,7 +77,7 @@ class SocialAuthController extends Controller
             //Auth::login($user);
             auth()->login($user);
 
-            return redirect("/pages/profile-review");
+            return redirect("/ddashboard");
 
 
          }

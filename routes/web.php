@@ -41,7 +41,7 @@ Route::get('/onboard', 'PageController@onboard')->name('onboard');
 Route::post('/onboard', 'PageController@onboard')->name('onboard');
 
 //jobs
-Route::get('/{job}/{id}', 'Job\JobController@viewJob')->name('job');
+Route::get('/job/{id}', 'Job\JobController@viewJob')->name('job');
 Route::get('/{job}/{id}/{ref}', 'Job\JobController@viewJob')->name('jobref');
 Route::get('/jobs', 'Job\JobController@getJobs')->name('jobs')->middleware('auth');
 Route::get('/apply/{id}/{cid}', 'Job\JobController@apply')->name('apply')->middleware('auth');
@@ -59,5 +59,5 @@ Route::get('/positions', 'PageController@positions')->name('positions');
 Route::get('/cprofile', 'PageController@cProfile')->name('companyProfile');
 
 
-Route::get('login/{provider}', 'Auth\SocialAuthController@redirectToProvider');
-Route::get('login/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback');
+Route::get('/login/{provider}', 'Auth\SocialAuthController@redirectToProvider');
+Route::get('/login/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback');
