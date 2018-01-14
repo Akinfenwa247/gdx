@@ -23,6 +23,7 @@ Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/assess', 'PageController@assess')->name('assess');
+
 //Devs
 Route::get('/assessment', 'PageController@assessment')->name('assessment');
 Route::get('/profile', 'Devs\ProfileController@profile')->name('profile');
@@ -35,7 +36,10 @@ Route::post('/skill_level', 'Devs\SkillLevelController@saveSkillLevel')->name('s
 Route::get('/editskill_level', 'Devs\SkillLevelController@editSkillLevel')->name('editskilllevel')->middleware('auth');
 Route::get('/project', 'PageController@project')->name('project');
 Route::get('/ddashboard', 'PageController@ddashboard')->name('ddashboard')->middleware('auth');
-Route::get('/referral', 'PageController@referral')->name('referrals')->middleware('auth');;
+Route::get('/referral', 'PageController@referral')->name('referrals')->middleware('auth');
+
+//assessment
+
 
 Route::get('/onboard', 'PageController@onboard')->name('onboard');
 Route::post('/onboard', 'PageController@onboard')->name('onboard');
@@ -61,3 +65,12 @@ Route::get('/cprofile', 'PageController@cProfile')->name('companyProfile');
 
 Route::get('/login/{provider}', 'Auth\SocialAuthController@redirectToProvider');
 Route::get('/login/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback');
+
+//admin
+Route::get('/admin/assessment', 'Assessment/AssessmentController@assessment')->name('adminassessment');
+Route::get('/admin/project', 'Project/ProjectController@project')->name('adminproject');
+Route::get('/admin/users', 'User/UserController@users')->name('adminusers');
+Route::get('/admin/rating', 'RatingController@rating')->name('adminrating');
+Route::get('/admin/jobs', 'Job/JobController@jobs')->name('adminjobs');
+Route::get('/admin/company', 'Company/CompanyController@company')->name('admincompany');
+Route::get('/admin', 'PageController@admin')->name('admin');

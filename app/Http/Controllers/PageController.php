@@ -22,6 +22,10 @@ class PageController extends Controller
         return view('devs.assess');
     }
 
+    public function admin(){
+        return view('admin.dashboard');
+    }
+
     public function assessment(){
         return view('devs.assessment');
     }
