@@ -114,8 +114,6 @@
             <div>
               <button class="btn btn-primary" type="submit">Complete</button>
             </div>
-
-
           </div>
       </form>
 

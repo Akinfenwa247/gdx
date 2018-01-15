@@ -13,6 +13,15 @@ use DB;
 
 class JobController extends Controller
 {
+
+ //Admin area for jobs
+  public function job()
+  {
+
+    return view('admin.job.index');
+
+  }
+
   //POst a new job
 
   public function addJob (Request $request)

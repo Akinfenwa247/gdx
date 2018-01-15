@@ -67,10 +67,12 @@ Route::get('/login/{provider}', 'Auth\SocialAuthController@redirectToProvider');
 Route::get('/login/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback');
 
 //admin
-Route::get('/admin/assessment', 'Assessment/AssessmentController@assessment')->name('adminassessment');
-Route::get('/admin/project', 'Project/ProjectController@project')->name('adminproject');
-Route::get('/admin/users', 'User/UserController@users')->name('adminusers');
+Route::get('/admin/assessment', 'Assessment\AssessmentController@assessment')->name('adminassessment');
+Route::get('/admin/addQuestion', 'Assessment\AssessmentController@addQuestion')->name('addQuestion');
+Route::post('/admin/addQuestion', 'Assessment\QuestionController@addQuestion')->name('addQuestion');
+Route::get('/admin/project', 'Project\ProjectController@project')->name('adminproject');
+Route::get('/admin/users', 'User\UserController@users')->name('adminusers');
 Route::get('/admin/rating', 'RatingController@rating')->name('adminrating');
-Route::get('/admin/jobs', 'Job/JobController@jobs')->name('adminjobs');
-Route::get('/admin/company', 'Company/CompanyController@company')->name('admincompany');
+Route::get('/admin/jobs', 'Job\JobController@job')->name('adminjobs');
+Route::get('/admin/company', 'Company\CompanyController@company')->name('admincompany');
 Route::get('/admin', 'PageController@admin')->name('admin');

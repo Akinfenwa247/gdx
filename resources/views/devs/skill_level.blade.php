@@ -18,21 +18,11 @@
         </div>
         <select name="skill_level" class="input custom-select" required >
           <option value="0"></option>
-          <option value="1"
-
-          >Intern</option>
-          <option value="2"
-
-          >Junior</option>
-          <option value="3"
-
-          >Intermediate </option>
-          <option value="4"
-
-          >Advance</option>
-          <option value="5"
-
-          >Senior </option>
+          <option value="1">Intern</option>
+          <option value="2">Junior</option>
+          <option value="3">Intermediate </option>
+          <option value="4">Advance</option>
+          <option value="5">Senior </option>
         </select>
         <div class="invalid-feedback">
         Please select your stack.
