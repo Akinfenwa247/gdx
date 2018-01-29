@@ -7,6 +7,7 @@ use App\Http\Controllers\Job\JobController;
 use App\Models\Company;
 use App\Models\Job;
 use App\Models\Apply;
+use App\User;
 use Auth;
 
 class PageController extends Controller
@@ -56,6 +57,7 @@ class PageController extends Controller
       return view('company.company_login');
     }
 
+
     public function cdashboard(){
       return view('company.dashboard');
     }
@@ -71,6 +73,16 @@ class PageController extends Controller
 
     public function companySignup(){
       return view('company.company_signup');
+    }
+
+    public function redirectHandle() {
+      $us = User::find(Auth::ID());
+      $role = $us->role;
+      if($role == 2) {
+        return redirect('cdashboard');
+      }else{
+        return redirect('ddashboard');
+      }
     }
 
     public function company(){

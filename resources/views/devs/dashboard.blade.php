@@ -33,7 +33,7 @@
             @foreach($data as $jb)
 
             <p>
-            <strong>  <a class="" href="{{ url('/'.$jb->job->skill.'/'.$jb->job->id) }}">{{ \App\Http\Controllers\Devs\SkillLevelController::formatSkill($jb->job->skill) }}</a></strong> <br />
+            <strong>  <a class="" href="{{ url('/job/'.$jb->job->id) }}">{{ \App\Http\Controllers\Devs\SkillLevelController::formatSkill($jb->job->skill) }}</a></strong> <br />
               {{ $jb->job->location}}, 1234 <a class="btn btn-warning" href="#">Pending</a>
             </p>
             <hr>
@@ -50,7 +50,7 @@
             @if($jobs)
             @foreach($jobs as $job)
             <p>
-            <strong>  <a class="" href="{{ url('/'.$job->skill.'/'.$job->id) }}">{{ \App\Http\Controllers\Devs\SkillLevelController::formatSkillLevel($job->skill_level)  }} {{ \App\Http\Controllers\Devs\SkillLevelController::formatSkill($job->skill) }}</a></strong> <br />
+            <strong>  <a class="" href="{{ url('/job/'.$job->id) }}">{{ \App\Http\Controllers\Devs\SkillLevelController::formatSkillLevel($job->skill_level)  }} {{ \App\Http\Controllers\Devs\SkillLevelController::formatSkill($job->skill) }}</a></strong> <br />
               {{ $job->location }}
             </p>
             <hr>
@@ -67,7 +67,7 @@
             @if($recent)
             @foreach($recent as $rc)
             <p>
-            <strong>  <a class="" href="{{ url('/'.$job->skill.'/'.$job->id) }}">{{ \App\Http\Controllers\Devs\SkillLevelController::formatSkillLevel($rc->job->skill_level)  }} {{ \App\Http\Controllers\Devs\SkillLevelController::formatSkill($rc->job->skill) }}</a></strong> <br />
+            <strong>  <a class="" href="{{ url('/job/'.$job->id) }}">{{ \App\Http\Controllers\Devs\SkillLevelController::formatSkillLevel($rc->job->skill_level)  }} {{ \App\Http\Controllers\Devs\SkillLevelController::formatSkill($rc->job->skill) }}</a></strong> <br />
               {{ $rc->job->location }}
             </p>
             <hr>

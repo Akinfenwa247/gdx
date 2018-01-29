@@ -7,7 +7,7 @@
       <div class="">
         <h2>HOW IT WORKS</h2>
         <p>
-          We help you hire competent developers quickly. We leave to do what you know how to do best, which is exciting your customers.
+          We help you hire competent developers quickly. We leave you to do what you know how to do best, which is to excite your customers.
         </p>
         <div class="d-flex justify-content-start">
           <div class="giveSmallSpace">
@@ -34,7 +34,7 @@
             <p>
               <strong>Post a Position</strong>
           <br>
-              A dedicated hiring professional have a session with you to assess your hiring needs and expectation.
+              We help you craft the best job description to highlight critical hiring criteria to attract top talents.
             </p>
 
           </div>

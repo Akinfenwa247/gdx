@@ -23,6 +23,7 @@ Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/assess', 'PageController@assess')->name('assess');
+Route::get('/x', 'PageController@redirectHandle')->name('rd');
 
 //Devs
 Route::get('/assessment', 'PageController@assessment')->name('assessment');
@@ -46,7 +47,8 @@ Route::post('/onboard', 'PageController@onboard')->name('onboard');
 
 //jobs
 Route::get('/job/{id}', 'Job\JobController@viewJob')->name('job');
-Route::get('/{job}/{id}/{ref}', 'Job\JobController@viewJob')->name('jobref');
+Route::get('/job/{id}/{job}', 'Job\JobController@viewJob')->name('job');
+//Route::get('/{job}/{id}/{ref}', 'Job\JobController@viewJob')->name('jobref');
 Route::get('/jobs', 'Job\JobController@getJobs')->name('jobs')->middleware('auth');
 Route::get('/apply/{id}/{cid}', 'Job\JobController@apply')->name('apply')->middleware('auth');
 
@@ -56,6 +58,7 @@ Route::post('/addCompany', 'Company\CompanyController@create')->name('addCompany
 Route::get('/company/login', 'PageController@companyLogin')->name('clogin');
 Route::get('/company', 'PageController@company')->name('company');
 Route::get('/company_faq', 'PageController@companyFAQ')->name('companyfaq');
+Route::get('/company_signup', 'PageController@companySignUp')->name('companysu');
 Route::get('/cdashboard', 'PageController@cdashboard')->name('cdashboard');
 Route::get('/add_position', 'PageController@addPosition')->name('addPosition');
 Route::get('/candidates', 'PageController@candidates')->name('candidates');
@@ -69,7 +72,9 @@ Route::get('/login/{provider}/callback', 'Auth\SocialAuthController@handleProvid
 //admin
 Route::get('/admin/assessment', 'Assessment\AssessmentController@assessment')->name('adminassessment');
 Route::get('/admin/addQuestion', 'Assessment\AssessmentController@addQuestion')->name('addQuestion');
+Route::get('/admin/addAnswer/{q_id}', 'Assessment\AssessmentController@addAnswer')->name('addAnswer');
 Route::post('/admin/addQuestion', 'Assessment\QuestionController@addQuestion')->name('addQuestion');
+Route::post('/admin/addAnswer', 'Assessment\AnswerController@addAnswer')->name('addAnswer');
 Route::get('/admin/project', 'Project\ProjectController@project')->name('adminproject');
 Route::get('/admin/users', 'User\UserController@users')->name('adminusers');
 Route::get('/admin/rating', 'RatingController@rating')->name('adminrating');

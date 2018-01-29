@@ -25,4 +25,10 @@ class AssessmentController extends Controller
     {
       return view('admin.assessment.addQuestion');
     }
+
+    public function addAnswer($q_id)
+    {
+
+      return view('admin.assessment.addAnswer', compact('q_id'));
+    }
 }

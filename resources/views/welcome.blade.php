@@ -47,7 +47,7 @@
         Step 3
       </h3>
       <p>
-        Get job that matches your skillsets
+        Get jobs that match your skillsets
       </p>
     </div>
 

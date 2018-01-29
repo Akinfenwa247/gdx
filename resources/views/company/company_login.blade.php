@@ -15,7 +15,8 @@
     Access your company dashboard here to manage your job list.
   </p>
 
-  <form method="post" action="" />
+  <form method="post" action="/login" />
+  {{ csrf_field() }}
     <div class="form-group">
       <div>
         <label>Email</label>
@@ -33,7 +34,7 @@
         <label>Password</label>
       </div>
       <div>
-        <input type="password" class="input form-control" name="pwd"  />
+        <input type="password" class="input form-control" name="password"  />
         <div class="invalid-feedback">
         Please enter your password.
         </div>

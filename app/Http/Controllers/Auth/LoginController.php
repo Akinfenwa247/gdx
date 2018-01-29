@@ -26,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/ddashboard';
+    protected $redirectTo = '/x';
 
     /**
      * Create a new controller instance.
@@ -37,6 +37,8 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    
 
      /**
      * Redirect the user to the GitHub authentication page.

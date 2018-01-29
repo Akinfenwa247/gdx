@@ -30,7 +30,7 @@ class CompanyController extends Controller
           $lname = $name[1];
       }
       $email = $request->email;
-      $password = $request->password;
+      $password = $fname; $request->password;
 
       $user = User::create([
           'name' =>$fname,
@@ -63,7 +63,7 @@ class CompanyController extends Controller
 
 
       //return redirect('/success')->with('status', 'Thanks for asking to learn more, our sales professionals will get in touch.');
-      return redirect('/')->with('status', 'Thanks for asking to learn more, our hiring professionals will get in touch.');
+      return redirect('/')->with('status', 'Thanks for asking to learn more, our hiring professionals will get in touch shortly to get you started.');
   }
 
   public function success() {

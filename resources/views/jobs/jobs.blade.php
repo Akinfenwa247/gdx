@@ -36,7 +36,7 @@
             <div class="">
               <h4>Latest Jobs</h4>
               @foreach ($jobs as $job)
-              <p><strong>  <a class="" href="{{ url('/'.\App\Http\Controllers\Devs\SkillLevelController::formatSkillLevel($job->skill_level).'-'.str_replace(' ','-',\App\Http\Controllers\Devs\SkillLevelController::formatSkill($job->skill)).'/'.$job->id) }}">{{ \App\Http\Controllers\Devs\SkillLevelController::formatSkillLevel($job->skill_level)  }} {{ \App\Http\Controllers\Devs\SkillLevelController::formatSkill($job->skill) }}</a></strong> <br />
+              <p><strong>  <a class="" href="{{ url('/job/'.$job->id.'/'.\App\Http\Controllers\Devs\SkillLevelController::formatSkillLevel($job->skill_level).'-'.str_replace(' ','-',\App\Http\Controllers\Devs\SkillLevelController::formatSkill($job->skill))) }}">{{ \App\Http\Controllers\Devs\SkillLevelController::formatSkillLevel($job->skill_level)  }} {{ \App\Http\Controllers\Devs\SkillLevelController::formatSkill($job->skill) }}</a></strong> <br />
                 {{ $job->technology}} <br>
                 {{ $job->location}}
 

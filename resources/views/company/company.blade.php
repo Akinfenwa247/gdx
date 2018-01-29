@@ -8,9 +8,9 @@
   <!-- <img src="assets/img/bg/engineer-background.png" /> -->
   <h2>HIRE WORLD-CLASS DEVELOPERS QUICKLY</h1>
   <p>
-    At GetDev we shorten your dev hiring time from 3 months to JUST 2 weeks.
+    At GetDev we shorten your developer hiring time from 3 months to JUST under a week.
   </p>
-  <a  href="#" role="button" class="btn btn-lg btn-success">Learn More</a>
+  <a  href="/company_signup" role="button" class="btn btn-lg btn-success">Learn More</a>
   </div>
 </div>
 

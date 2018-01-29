@@ -16,7 +16,7 @@
           <!-- <label>Email</label> -->
         </div>
         <div>
-          <input type="text" class="input form-control" name="email" placeholder="bola@example.com" />
+          <input type="text" class="input form-control" name="email" placeholder="bola@example.com" required/>
           <div class="invalid-feedback">
           Please enter your email.
           </div>

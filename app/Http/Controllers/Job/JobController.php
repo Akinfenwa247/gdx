@@ -123,7 +123,7 @@ class JobController extends Controller
 
 
 
-  public function viewJob ($job, $id)
+  public function viewJob ($id)
   {
       //$id = $request->id;
       $job = Job::find($id);
